@@ -25,6 +25,7 @@ public class NoteObject : MonoBehaviour
         if (collision.CompareTag("Button"))
         {
             buttonReference.GetComponent<ButtonCheck>().deleteNote(this);
+            Destroy(this.gameObject);
         }
     }
 }

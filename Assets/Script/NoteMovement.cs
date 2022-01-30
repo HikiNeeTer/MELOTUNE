@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoteMovement : MonoBehaviour
 {
     public float beatTempo;
-    private bool hasStart;
+    [HideInInspector] public bool hasStart;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class NoteMovement : MonoBehaviour
         // If game start -> Note start move and song start play
         if (!hasStart)
         {
-            if (Input.anyKeyDown)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 hasStart = true;
             }

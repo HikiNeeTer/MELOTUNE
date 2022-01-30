@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public GameObject antButton;
+    public NoteMovement noteMovement;
 
     void Start()
     {
@@ -15,13 +16,21 @@ public class ButtonController : MonoBehaviour
     {
         ButtonControl();
 
-        //Switching lane mechanic
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        //Switching Lane mechanic when Game Start
+        if (Input.GetKeyDown(KeyCode.Space) && noteMovement.hasStart) 
         {
-            gameObject.SetActive(false);
-            antButton.SetActive(true);
+            SetObject(antButton, true);
+            SetObject(gameObject, false);
         }
 
+    }
+
+    private void SetObject(GameObject obj, bool status)
+    {
+        // Cannot use SetActive -> will affect onTriggerExit on NoteObject.cs
+        obj.GetComponent<SpriteRenderer>().enabled = status;
+        obj.GetComponent<ButtonController>().enabled = status;
+        obj.GetComponent<ButtonCheck>().enabled = status;
     }
 
     void ButtonControl()
