@@ -22,6 +22,7 @@ public class NoteObject : MonoBehaviour
         {
             // If User Hit Note then Destroy Object
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (Input.GetKeyDown(keyToPress) && buttonReference.GetComponent<ButtonCheck>().isCurrentNote() == this.gameObject)
             {
                 Debug.Log(dc.distance);
@@ -38,6 +39,10 @@ public class NoteObject : MonoBehaviour
                     Debug.Log("Good");
                 }                
                 buttonReference.GetComponent<ButtonCheck>().deleteNote();
+=======
+            if (Input.GetKeyDown(keyToPress))
+            {                
+>>>>>>> Stashed changes
 =======
             if (Input.GetKeyDown(keyToPress))
             {                

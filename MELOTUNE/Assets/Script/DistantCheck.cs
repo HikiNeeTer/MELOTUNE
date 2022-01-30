@@ -8,7 +8,11 @@ public class DistantCheck : MonoBehaviour
     public Transform distobutton;
     
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public float distance;
+=======
+    private float distance;
+>>>>>>> Stashed changes
 =======
     private float distance;
 >>>>>>> Stashed changes
@@ -22,8 +26,13 @@ public class DistantCheck : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         distance = Mathf.Abs(distobutton.transform.position.x - transform.position.x);
         //Debug.Log(distance);
+=======
+        distance = (distobutton.transform.position.x - transform.position.x);
+        Debug.Log(distance);
+>>>>>>> Stashed changes
 =======
         distance = (distobutton.transform.position.x - transform.position.x);
         Debug.Log(distance);
