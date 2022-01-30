@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Ping_Scene.unity
+- path: Assets/Scenes/Tun_Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -7,7 +7,7 @@ public class NoteObject : MonoBehaviour
     public bool canPressed;
     public KeyCode keyToPress;
     GameObject buttonReference;
-
+    public DistantCheck dc;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,22 @@ public class NoteObject : MonoBehaviour
         // If User Hit Note then Destroy Object
         if (canPressed)
         {
-            // Check if user is press key or not? / Checking that this note is the front note or not?
+            // If User Hit Note then Destroy Object
             if (Input.GetKeyDown(keyToPress) && buttonReference.GetComponent<ButtonCheck>().isCurrentNote() == this.gameObject)
             {
-                // Delete this note from NoteList
+                Debug.Log(dc.distance);
+                if (dc.distance <= 0.5) 
+                {
+                    Debug.Log("perfect");
+                }
+                else if(dc.distance <= 1)
+                {
+                    Debug.Log("Great");
+                }
+                else if (dc.distance <= 2)
+                {
+                    Debug.Log("Good");
+                }                
                 buttonReference.GetComponent<ButtonCheck>().deleteNote();
                 Destroy(gameObject);
             }

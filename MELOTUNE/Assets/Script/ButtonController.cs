@@ -29,5 +29,13 @@ public class ButtonController : MonoBehaviour
             gameObject.SetActive(false);
             antButton.SetActive(true);
         }
+
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, 1);
     }
 }
