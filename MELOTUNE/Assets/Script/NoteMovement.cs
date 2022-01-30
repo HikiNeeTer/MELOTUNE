@@ -18,12 +18,9 @@ public class NoteMovement : MonoBehaviour
     void Update()
     {
         // If game start -> Note start move and song start play
-        if (!hasStart)
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                hasStart = true;
-            }
+        if (!hasStart && Input.GetKeyDown(KeyCode.Space))
+        {                      
+            hasStart = true;            
         }
         else
         {

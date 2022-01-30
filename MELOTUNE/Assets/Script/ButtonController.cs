@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public GameObject antButton;
+
     void Start()
     {
         
@@ -19,6 +21,13 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        //Switching lane mechanic
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            gameObject.SetActive(false);
+            antButton.SetActive(true);
         }
     }
 }
