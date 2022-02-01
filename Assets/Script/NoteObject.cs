@@ -17,15 +17,22 @@ public class NoteObject : MonoBehaviour
             // Add current note to NoteList which are in buttonReference
             buttonReference.GetComponent<ButtonCheck>().addNote(this);
         }
+
+        if (collision.CompareTag("Miss")) 
+        {           
+            Debug.Log("Miss(Pressing late)");
+            Destroy(this.gameObject);
+        }
     }
+
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         // If trigger(exit) then note cannot Press
         if (collision.CompareTag("Button"))
         {
-            buttonReference.GetComponent<ButtonCheck>().deleteNote(this);
-            Destroy(this.gameObject);
+            buttonReference.GetComponent<ButtonCheck>().deleteNote(this);                    
         }
     }
 }

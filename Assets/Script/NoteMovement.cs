@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoteMovement : MonoBehaviour
 {
     public float beatTempo;
-    [HideInInspector] public bool hasStart;
+    public bool hasStart = true;
 
     void Start()
     {
