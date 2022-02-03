@@ -20,7 +20,7 @@ public class NoteObject : MonoBehaviour
         if (collision.CompareTag("Miss")) 
         {           
             Debug.Log("Miss(Pressing late)");
-            buttonReference.GetComponent<ButtonCheck>().Combo = 0;
+            ButtonCheck.Combo = 0;
             Destroy(this.gameObject);
         }
     }

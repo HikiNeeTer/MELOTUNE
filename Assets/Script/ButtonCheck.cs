@@ -13,8 +13,8 @@ public class ButtonCheck : MonoBehaviour
     public KeyCode Down = KeyCode.S;
     public KeyCode Left = KeyCode.A;
     public KeyCode Right = KeyCode.D;
-    public int Score;
-    public int Combo;
+    public static int Score = 0;
+    public static int Combo = 0;
     public Text Ctext;
     public Text Stext;
 
@@ -28,6 +28,10 @@ public class ButtonCheck : MonoBehaviour
         DrawCircle(0.5f, 0.05f);
         DrawCircle(1.0f, 0.05f);
         DrawCircle(2.0f, 0.05f);
+
+        //Setting Text Combo & Score to 0
+        Ctext.text = "0";
+        Stext.text = "Score : ";
     }
 
     void Update()
@@ -76,7 +80,6 @@ public class ButtonCheck : MonoBehaviour
         }
         Ctext.text = "" + Combo;
         Stext.text = "Score : " + Score;
-
     }
 
     // Add note to NoteList
