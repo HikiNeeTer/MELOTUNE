@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonCheck : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class ButtonCheck : MonoBehaviour
     public KeyCode Down = KeyCode.S;
     public KeyCode Left = KeyCode.A;
     public KeyCode Right = KeyCode.D;
+    public int Score;
+    public int Combo;
+    public Text Ctext;
+    public Text Stext;
+
+
 
     void Start()
     {
@@ -43,23 +50,33 @@ public class ButtonCheck : MonoBehaviour
                 if (dc.distance <= 0.5)
                 {
                     Debug.Log("Perfect");
+                    Combo += 1;
+                    Score += 1000;
                 }
                 else if (dc.distance <= 1)
                 {
                     Debug.Log("Great");
+                    Combo += 1;
+                    Score += 500;
                 }
                 else if (dc.distance <= 2)
                 {
                     Debug.Log("Good");
+                    Combo = 0;
+                    Score += 300;
                 }
             }
             else
             {
                 Debug.Log("Miss(Wrong Press)");
+                Combo = 0;
             }
             deleteNote(noteObj);
             Destroy(noteObj.gameObject);
         }
+        Ctext.text = "" + Combo;
+        Stext.text = "Score : " + Score;
+
     }
 
     // Add note to NoteList
