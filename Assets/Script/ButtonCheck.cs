@@ -13,11 +13,14 @@ public class ButtonCheck : MonoBehaviour
     public KeyCode Down = KeyCode.S;
     public KeyCode Left = KeyCode.A;
     public KeyCode Right = KeyCode.D;
+
     public static int Score = 0;
     public static int Combo = 0;
-    public Text Ctext;
-    public Text Stext;
+    public static float Skill = 0.0f;
 
+    public Text comboText;
+    public Text scoreText;
+    public Text skillText;
 
 
     void Start()
@@ -30,8 +33,9 @@ public class ButtonCheck : MonoBehaviour
         DrawCircle(2.0f, 0.05f);
 
         //Setting Text Combo & Score to 0
-        Ctext.text = "0";
-        Stext.text = "Score : ";
+        comboText.text = "Combo : " + Combo.ToString();
+        scoreText.text = "Score : " + Score.ToString();
+        skillText.text = "Skill : " + Skill.ToString("F2");
     }
 
     void Update()
@@ -54,18 +58,21 @@ public class ButtonCheck : MonoBehaviour
                 if (dc.distance <= 0.5)
                 {
                     Debug.Log("Perfect");
+                    Skill += 0.1f;
                     Combo += 1;
                     Score += 1000;
                 }
                 else if (dc.distance <= 1)
                 {
                     Debug.Log("Great");
+                    Skill += 0.075f;
                     Combo += 1;
                     Score += 500;
                 }
                 else if (dc.distance <= 2)
                 {
                     Debug.Log("Good");
+                    Skill += 0.05f;
                     Combo = 0;
                     Score += 300;
                 }
@@ -78,8 +85,10 @@ public class ButtonCheck : MonoBehaviour
             deleteNote(noteObj);
             Destroy(noteObj.gameObject);
         }
-        Ctext.text = "" + Combo;
-        Stext.text = "Score : " + Score;
+        Skill = (Skill >= 1.0f ? 1.0f : Skill);
+        comboText.text = "Combo : " + Combo.ToString();
+        scoreText.text = "Score : " + Score.ToString();
+        skillText.text = "Skill : " + Skill.ToString("F2");
     }
 
     // Add note to NoteList
