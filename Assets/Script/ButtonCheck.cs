@@ -22,15 +22,14 @@ public class ButtonCheck : MonoBehaviour
     public Text scoreText;
     public Text skillText;
 
-
     void Start()
     {
         // Initialize List
         NoteList = new Queue<NoteObject>();
         // For Debugging (!!Create circle for distance detection!!)
-        DrawCircle(0.5f, 0.05f);
-        DrawCircle(1.0f, 0.05f);
-        DrawCircle(2.0f, 0.05f);
+        //DrawCircle(0.5f, 0.05f);
+        //DrawCircle(1.0f, 0.05f);
+        //DrawCircle(2.0f, 0.05f);
 
         //Setting Text Combo & Score to 0
         comboText.text = "Combo : " + Combo.ToString();

@@ -20,6 +20,7 @@ public class NoteMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 hasStart = true;
+                GetComponent<AudioSource>().Play();
             }
         }
         else

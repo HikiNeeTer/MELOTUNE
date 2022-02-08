@@ -5,24 +5,29 @@ using UnityEngine;
 public class NoteSpawn : MonoBehaviour
 {
     public GameObject note;
-    float randX;
     public float spawnRate = 2f;
-    Vector2 spawnplace;
-    float nextSpawn = 0.0f;
+
+    private bool ready = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnplace = transform.position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > nextSpawn) 
+        if (!ready)
         {
-            nextSpawn = Time.time + spawnRate;
-            Instantiate(note, spawnplace, Quaternion.identity);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ready = true;
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
         }
     }
 }
