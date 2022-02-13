@@ -20,7 +20,6 @@ public class ButtonCheck : MonoBehaviour
 
     public Text comboText;
     public Text scoreText;
-    public Text skillText;
 
     void Start()
     {
@@ -34,7 +33,6 @@ public class ButtonCheck : MonoBehaviour
         //Setting Text Combo & Score to 0
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
-        skillText.text = "Skill : " + Skill.ToString("F2");
     }
 
     void Update()
@@ -60,6 +58,7 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.1f;
                     Combo += 1;
                     Score += 1000;
+                    SkillBar.AmountSkill += 10f;
                 }
                 else if (dc.distance <= 1)
                 {
@@ -67,6 +66,7 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.075f;
                     Combo += 1;
                     Score += 500;
+                    SkillBar.AmountSkill += 5f;
                 }
                 else if (dc.distance <= 2)
                 {
@@ -74,6 +74,7 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.05f;
                     Combo = 0;
                     Score += 300;
+                    SkillBar.AmountSkill += 3f;
                 }
             }
             else
@@ -87,7 +88,15 @@ public class ButtonCheck : MonoBehaviour
         Skill = (Skill >= 1.0f ? 1.0f : Skill);
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
-        skillText.text = "Skill : " + Skill.ToString("F2");
+
+        if(SkillBar.AmountSkill >= 100f) 
+        {
+            if (Input.GetKeyDown(KeyCode.R)) 
+            {
+                Debug.Log("Skill activated!!");
+                SkillBar.AmountSkill = 0f;
+            }
+        }
     }
 
     // Add note to NoteList
