@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
     public KeyCode keyToPress;
+    
     [HideInInspector] public GameObject buttonReference;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,12 +18,6 @@ public class NoteObject : MonoBehaviour
             buttonReference.GetComponent<ButtonCheck>().addNote(this);
         }
 
-        if (collision.CompareTag("Miss")) 
-        {           
-            Debug.Log("Miss(Pressing late)");
-            ButtonCheck.Combo = 0;
-            Destroy(this.gameObject);
-        }
     }
 
 

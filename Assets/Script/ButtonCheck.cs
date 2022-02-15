@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ButtonCheck : MonoBehaviour
 {
-    private Queue<NoteObject> NoteList;
+    private List<NoteObject> NoteList;
     private NoteObject noteObj;
-
+    private SkillEasy EZ;
     // For Setting KeyCode on Button
     public KeyCode Up = KeyCode.W;
     public KeyCode Down = KeyCode.S;
@@ -18,13 +18,16 @@ public class ButtonCheck : MonoBehaviour
     public static int Combo = 0;
     public static float Skill = 0.0f;
 
+    public bool NoteWrong = false;
+   
+
     public Text comboText;
     public Text scoreText;
 
     void Start()
     {
         // Initialize List
-        NoteList = new Queue<NoteObject>();
+        NoteList = new List<NoteObject>();
         // For Debugging (!!Create circle for distance detection!!)
         //DrawCircle(0.5f, 0.05f);
         //DrawCircle(1.0f, 0.05f);
@@ -58,7 +61,7 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.1f;
                     Combo += 1;
                     Score += 1000;
-                    SkillBar.AmountSkill += 10f;
+                    SkillBar.AmountSkill += 100f;
                 }
                 else if (dc.distance <= 1)
                 {
@@ -66,7 +69,7 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.075f;
                     Combo += 1;
                     Score += 500;
-                    SkillBar.AmountSkill += 5f;
+                    SkillBar.AmountSkill += 100f;
                 }
                 else if (dc.distance <= 2)
                 {
@@ -74,13 +77,12 @@ public class ButtonCheck : MonoBehaviour
                     Skill += 0.05f;
                     Combo = 0;
                     Score += 300;
-                    SkillBar.AmountSkill += 3f;
+                    SkillBar.AmountSkill += 100f;
                 }
             }
             else
             {
-                Debug.Log("Miss(Wrong Press)");
-                Combo = 0;
+                Miss();
             }
             deleteNote(noteObj);
             Destroy(noteObj.gameObject);
@@ -88,21 +90,23 @@ public class ButtonCheck : MonoBehaviour
         Skill = (Skill >= 1.0f ? 1.0f : Skill);
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
-
-        if(SkillBar.AmountSkill >= 100f) 
-        {
-            if (Input.GetKeyDown(KeyCode.R)) 
-            {
-                Debug.Log("Skill activated!!");
-                SkillBar.AmountSkill = 0f;
-            }
+        
+    }
+    public void Miss() 
+    {
+        NoteWrong = true;
+        if (EZ.isskill == false)
+        {           
+            Debug.Log("Miss(Wrong Press)");
+            Combo = 0;
         }
     }
 
     // Add note to NoteList
     public void addNote(NoteObject note)
     {
-        NoteList.Enqueue(note);
+        NoteList.Add(note);
+        NoteList.Sort(SortByPosX);
     }
 
     // Delete note that are on the front
@@ -115,9 +119,9 @@ public class ButtonCheck : MonoBehaviour
         }
 
         // If Peek of NoteList is noteObj then delete from List
-        if (NoteList.Peek() == noteObj)
+        if (NoteList[0] == noteObj)
         {
-            NoteList.Dequeue();
+            NoteList.RemoveAt(0);
         }
     }
 
@@ -130,9 +134,12 @@ public class ButtonCheck : MonoBehaviour
             return null;
         }
 
-        return NoteList.Peek();
+        return NoteList[0];
     }
-    
+    static int SortByPosX(NoteObject a, NoteObject b)
+    {
+        return a.transform.position.x.CompareTo(b.transform.position.x);
+    }
     // Function for create circle (!!For distance detection!!)
     private void DrawCircle(float radius, float lineWidth)
     {

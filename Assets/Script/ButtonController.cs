@@ -19,8 +19,7 @@ public class ButtonController : MonoBehaviour
         //Switching Lane mechanic when Game Start
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            SetObject(antButton, true);
-            SetObject(gameObject, false);
+            transform.position = new Vector2(transform.position.x, (transform.position.y <= -2.4 ? -0.5f:-2.5f)); 
         }
 
     }
