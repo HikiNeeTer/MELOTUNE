@@ -7,7 +7,7 @@ public class SkillEasy : MonoBehaviour
     public ButtonCheck BC;
     public MissBarrier NO;
     public bool isskill;
-    private int skillamount;
+    public int skillamount;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class SkillEasy : MonoBehaviour
             {
                 isskill = false;
             }
-            if (NO.NoteMiss || BC.NoteWrong && skillamount > 0)
+            if (NO.NoteMiss && skillamount > 0)
             {
                 Debug.Log("Miss is perfect");
                 ButtonCheck.Combo += 1;

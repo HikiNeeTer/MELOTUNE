@@ -7,7 +7,7 @@ public class ButtonCheck : MonoBehaviour
 {
     private List<NoteObject> NoteList;
     private NoteObject noteObj;
-    private SkillEasy EZ;
+    public SkillEasy EZ;
     // For Setting KeyCode on Button
     public KeyCode Up = KeyCode.W;
     public KeyCode Down = KeyCode.S;
@@ -18,7 +18,7 @@ public class ButtonCheck : MonoBehaviour
     public static int Combo = 0;
     public static float Skill = 0.0f;
 
-    public bool NoteWrong = false;
+    public bool NoteWrong;
    
 
     public Text comboText;
@@ -99,6 +99,13 @@ public class ButtonCheck : MonoBehaviour
         {           
             Debug.Log("Miss(Wrong Press)");
             Combo = 0;
+        }
+        if (EZ.isskill == true) 
+        {
+            Debug.Log("Miss(Wrong Press) but perfect");
+            Combo += 1;
+            Score += 1000;
+            EZ.skillamount--;
         }
     }
 
