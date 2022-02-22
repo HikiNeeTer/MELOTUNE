@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 100
-  NoteMiss: 0
   buttonReference: {fileID: 0}
 --- !u!114 &4255323025041938719
 MonoBehaviour:
