@@ -23,6 +23,7 @@ public class MissBarrier : MonoBehaviour
         if (collision.CompareTag("Note")) 
         {
             NoteMiss = true;
+            ButtonCheck.MissS++;
             if (ES.isskill == false) 
             {
                 Debug.Log("Miss (Pressing late)");

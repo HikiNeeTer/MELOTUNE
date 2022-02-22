@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 public class TestSceneChange : MonoBehaviour
 {
 
-    public void LoadScene(int TTscore) 
+    public void LoadScene(string sceneName) 
     {
-        ScoreKeeper.TotalScore = TTscore;
-        TTscore = ButtonCheck.Score;
-        SceneManager.LoadScene("Tun_Scene_result");
+        SceneManager.LoadScene(sceneName);
     }
 }

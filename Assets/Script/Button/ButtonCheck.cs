@@ -16,6 +16,10 @@ public class ButtonCheck : MonoBehaviour
 
     public static int Score = 0;
     public static int Combo = 0;
+    public static int PerfectS = 0;
+    public static int GreatS = 0;
+    public static int GoodS = 0;
+    public static int MissS = 0;
     public static float Skill = 0.0f;
 
     public bool NoteWrong;
@@ -36,6 +40,14 @@ public class ButtonCheck : MonoBehaviour
         //Setting Text Combo & Score to 0
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
+        Combo = 0;
+        Score = 0;
+        PerfectS = 0;
+        GreatS = 0;
+        GoodS = 0;
+        MissS = 0;
+        PlayerPrefs.SetInt("highcombo", Combo);
+        SkillBar.AmountSkill = 0f;
     }
 
     void Update()
@@ -60,6 +72,7 @@ public class ButtonCheck : MonoBehaviour
                     Debug.Log("Perfect");
                     Skill += 0.1f;
                     Combo += 1;
+                    PerfectS++;
                     Score += 1000;
                     SkillBar.AmountSkill += 100f;
                 }
@@ -68,6 +81,7 @@ public class ButtonCheck : MonoBehaviour
                     Debug.Log("Great");
                     Skill += 0.075f;
                     Combo += 1;
+                    GreatS++;
                     Score += 500;
                     SkillBar.AmountSkill += 100f;
                 }
@@ -76,6 +90,7 @@ public class ButtonCheck : MonoBehaviour
                     Debug.Log("Good");
                     Skill += 0.05f;
                     Combo = 0;
+                    GoodS++;
                     Score += 300;
                     SkillBar.AmountSkill += 100f;
                 }
@@ -87,6 +102,10 @@ public class ButtonCheck : MonoBehaviour
             deleteNote(noteObj);
             Destroy(noteObj.gameObject);
         }
+        if(Combo > PlayerPrefs.GetInt("highcombo")) 
+        {
+            PlayerPrefs.SetInt("highcombo", Combo);
+        }
         Skill = (Skill >= 1.0f ? 1.0f : Skill);
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
@@ -94,6 +113,7 @@ public class ButtonCheck : MonoBehaviour
     }
     public void Miss() 
     {
+        MissS++;
         NoteWrong = true;
         if (EZ.isskill == false)
         {           

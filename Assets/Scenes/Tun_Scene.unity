@@ -454,6 +454,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193144599}
   m_CullTransparentMesh: 1
+--- !u!1 &227473995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227473996}
+  - component: {fileID: 227473997}
+  m_Layer: 5
+  m_Name: Scenemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &227473996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227473995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1921848787}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &227473997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227473995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f00a5ca8924944c9aa0b35ec9efdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &231225656
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +704,7 @@ GameObject:
   - component: {fileID: 349155762}
   - component: {fileID: 349155761}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 349155762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227473997}
+        m_TargetAssemblyTypeName: TestSceneChange, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Tun_Scene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &349155762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,6 +1871,7 @@ GameObject:
   - component: {fileID: 1542224554}
   - component: {fileID: 1542224553}
   - component: {fileID: 1542224555}
+  - component: {fileID: 1542224556}
   m_Layer: 0
   m_Name: RenderingSprite
   m_TagString: Untagged
@@ -1899,6 +1960,20 @@ MonoBehaviour:
   NO: {fileID: 178994972}
   isskill: 0
   skillamount: 0
+--- !u!114 &1542224556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542224552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeac31ed6ad5ee941b20ad5bccea88a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseUI: {fileID: 1435444511}
+  AS: {fileID: 832755835}
 --- !u!1 &1582494023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2592,7 @@ RectTransform:
   m_Children:
   - {fileID: 237723365}
   - {fileID: 1435444512}
+  - {fileID: 227473996}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2788,13 +2864,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1998559457}
         m_TargetAssemblyTypeName: TestSceneChange, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Tun_Scene_result
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1998559459
@@ -2930,7 +3006,7 @@ GameObject:
   - component: {fileID: 2047036161}
   - component: {fileID: 2047036160}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,7 +3075,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2047036161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 227473997}
+        m_TargetAssemblyTypeName: TestSceneChange, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2047036161
 MonoBehaviour:
   m_ObjectHideFlags: 0
