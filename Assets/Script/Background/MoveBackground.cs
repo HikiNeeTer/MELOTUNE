@@ -10,10 +10,13 @@ public class MoveBackground : MonoBehaviour
     [SerializeField]
     private float offset;
 
-    private Vector2 startPosition;
+    [SerializeField]
+    private NoteMovement noteSheet;
 
+    private Vector2 startPosition;
     private float newXposition;
- 
+    private float timeCount;
+
     void Start()
     {
         startPosition = transform.position;
@@ -22,8 +25,11 @@ public class MoveBackground : MonoBehaviour
    
     void Update()
     {
-        newXposition = Mathf.Repeat(Time.time * -moveSpeed, offset);
-
-        transform.position = startPosition + Vector2.right * newXposition; 
+        if (noteSheet.hasStart)
+        {
+            newXposition = Mathf.Repeat(timeCount * -moveSpeed, offset);
+            transform.position = startPosition + Vector2.right * newXposition;
+            timeCount += Time.deltaTime;
+        }
     }
 }

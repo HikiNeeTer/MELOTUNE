@@ -7,6 +7,9 @@ public class ButtonCheck : MonoBehaviour
 {
     private List<NoteObject> NoteList;
     private NoteObject noteObj;
+
+    public GameObject noteParticle;
+
     public SkillEasy EZ;
     // For Setting KeyCode on Button
     public KeyCode Up = KeyCode.W;
@@ -100,6 +103,8 @@ public class ButtonCheck : MonoBehaviour
                 Miss();
             }
             deleteNote(noteObj);
+            // Delete Note Object
+            Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
             Destroy(noteObj.gameObject);
         }
         if(Combo > PlayerPrefs.GetInt("highcombo")) 
