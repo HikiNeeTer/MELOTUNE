@@ -34,6 +34,7 @@ public class SkillEasy : MonoBehaviour
         }
         if(isskill == true) 
         {
+            SkillBar.AmountSkill = 0f;
             if (skillamount == 0)
             {
                 isskill = false;

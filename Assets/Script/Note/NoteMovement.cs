@@ -10,6 +10,7 @@ public class NoteMovement : MonoBehaviour
     void Start()
     {
         beatTempo /= 60.0f;
+        hasStart = false;
     }
 
     void Update()

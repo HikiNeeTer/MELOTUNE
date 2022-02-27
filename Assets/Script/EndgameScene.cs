@@ -6,19 +6,25 @@ using UnityEngine.SceneManagement;
 public class EndgameScene : MonoBehaviour
 {
     public AudioSource song;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if(song.isPlaying == false && NoteMovement.hasStart) 
+
+        if(song.isPlaying == false && NoteMovement.hasStart && PauseGame.GameIsPaused == false) 
         {
-            Debug.Log("Scene warp");
-            SceneManager.LoadScene("Tun_scene_result");
+            GoToResultScene();
         }
     }
+
+    void GoToResultScene() 
+    {
+        StartCoroutine(GameEnd());
+    }
+
+    private IEnumerator GameEnd() 
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Tun_scene_result");
+    }
+
 }
