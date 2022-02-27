@@ -42,6 +42,6 @@ public class PauseGame : MonoBehaviour
         PauseUI.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1f;
-        AS.Play();
+        AS.UnPause();
     }
 }

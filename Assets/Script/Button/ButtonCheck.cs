@@ -42,7 +42,7 @@ public class ButtonCheck : MonoBehaviour
         // Initialize List
         NoteList = new List<NoteObject>();
         // For Debugging (!!Create circle for distance detection!!)
-        //DrawCircle(0.5f, 0.05f);
+        //DrawCircle(0.3f, 0.05f);
         //DrawCircle(1.0f, 0.05f);
         //DrawCircle(2.0f, 0.05f);
 
@@ -78,7 +78,7 @@ public class ButtonCheck : MonoBehaviour
             {
                 DistantCheck dc = noteObj.GetComponent<DistantCheck>();
                 AS.Play();
-                if (dc.distance <= 0.5)
+                if (dc.distance <= 0.3)
                 {
                     Gdisplay.text = "Perfect!!";
                     Skill += 0.1f;
@@ -87,7 +87,7 @@ public class ButtonCheck : MonoBehaviour
                     Score += 1000;
                     SkillBar.AmountSkill += 5f;
                 }
-                else if (dc.distance <= 1)
+                else if (dc.distance <= 1.0)
                 {
                     Gdisplay.text = "Great";
                     Skill += 0.075f;
@@ -96,7 +96,7 @@ public class ButtonCheck : MonoBehaviour
                     Score += 500;
                     SkillBar.AmountSkill += 3f;
                 }
-                else if (dc.distance <= 2)
+                else if (dc.distance <= 2.0)
                 {
                     Gdisplay.text = "Good";
                     Skill += 0.05f;
