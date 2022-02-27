@@ -29,18 +29,14 @@ public class NoteSheetReader : MonoBehaviour
     public GameObject noteRight;
 
     [Header("System Input/Output")]
-    public string fileName;
+    public TextAsset fileName;
     public NoteSheet loadNoteSheet;
 
     private void Start()
     {
-        string loadString = File.ReadAllText(Application.dataPath + "/Load/" + fileName + ".json");
-        Debug.Log(loadString);
-        if (loadString != null)
-        {
-            loadNoteSheet = JsonUtility.FromJson<NoteSheet>(loadString);
-            Debug.Log(loadNoteSheet.name);
-        }
+        loadNoteSheet = JsonUtility.FromJson<NoteSheet>(fileName.text);
+        Debug.Log(loadNoteSheet.name);
+        
         CreateNote(loadNoteSheet.allNote);
             
     }
