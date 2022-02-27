@@ -52,6 +52,7 @@ public class NoteSheetReader : MonoBehaviour
 
     private void CreateNote(List<NoteComponent> allNote)
     {
+        int sLayer = 0;
         foreach (NoteComponent note in allNote)
         {
             GameObject obj = null;
@@ -71,7 +72,9 @@ public class NoteSheetReader : MonoBehaviour
             {
                 obj = Instantiate(noteRight, new Vector3(note.pos.x, note.row == 1 ? -2.5f : -0.5f, -8.0f), Quaternion.identity);
             }
+            obj.GetComponent<SpriteRenderer>().sortingOrder = allNote.Count - sLayer;
             obj.transform.SetParent(transform);
+            sLayer++;
         }
     }
 }

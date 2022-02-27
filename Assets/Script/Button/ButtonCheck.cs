@@ -108,8 +108,14 @@ public class ButtonCheck : MonoBehaviour
                 Miss();
             }
             deleteNote(noteObj);
+
+            // Create Particle
+            GameObject particle = Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
+            float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
+            // Destroy when particle play done
+            Destroy(particle, duration);
+
             // Delete Note Object
-            Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
             Destroy(noteObj.gameObject);
         }
         if(Combo > PlayerPrefs.GetInt("highcombo")) 
