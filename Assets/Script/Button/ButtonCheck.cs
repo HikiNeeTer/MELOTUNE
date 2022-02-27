@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonCheck : MonoBehaviour
 {
-    private List<NoteObject> NoteList;
+    public List<NoteObject> NoteList;
     private NoteObject noteObj;
 
     public GameObject noteParticle;
@@ -60,6 +60,8 @@ public class ButtonCheck : MonoBehaviour
 
     void Update()
     {
+        CheckNoteOverFlow();
+
         noteObj = currentNote();
         // If currentNote is null then return
         if (currentNote() == null)
@@ -152,6 +154,19 @@ public class ButtonCheck : MonoBehaviour
         NoteList.Sort(SortByPosX);
     }
 
+    public void CheckNoteOverFlow()
+    {
+        if (NoteList.Count == 0)
+        {
+            return;
+        }
+
+        if (NoteList[0] == null)
+        {
+            NoteList.RemoveAt(0);
+        }
+    }
+
     // Delete note that are on the front
     public void deleteNote(NoteObject noteObj)
     {
@@ -179,10 +194,12 @@ public class ButtonCheck : MonoBehaviour
 
         return NoteList[0];
     }
-    static int SortByPosX(NoteObject a, NoteObject b)
+
+    int SortByPosX(NoteObject a, NoteObject b)
     {
         return a.transform.position.x.CompareTo(b.transform.position.x);
     }
+
     // Function for create circle (!!For distance detection!!)
     private void DrawCircle(float radius, float lineWidth)
     {

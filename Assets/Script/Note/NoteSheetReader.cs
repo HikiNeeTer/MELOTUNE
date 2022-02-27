@@ -52,6 +52,7 @@ public class NoteSheetReader : MonoBehaviour
 
     private void CreateNote(List<NoteComponent> allNote)
     {
+        allNote.Sort(SortByPosX);
         int sLayer = 0;
         foreach (NoteComponent note in allNote)
         {
@@ -76,5 +77,10 @@ public class NoteSheetReader : MonoBehaviour
             obj.transform.SetParent(transform);
             sLayer++;
         }
+    }
+
+    int SortByPosX(NoteComponent a, NoteComponent b)
+    {
+        return a.pos.x.CompareTo(b.pos.x);
     }
 }
