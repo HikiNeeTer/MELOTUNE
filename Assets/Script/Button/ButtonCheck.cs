@@ -9,6 +9,7 @@ public class ButtonCheck : MonoBehaviour
     private NoteObject noteObj;
 
     public GameObject noteParticle;
+    public GameObject missParticle;
 
     public SkillEasy EZ;
     // For Setting KeyCode on Button
@@ -104,18 +105,24 @@ public class ButtonCheck : MonoBehaviour
                     Score += 300;
                     SkillBar.AmountSkill += 1f;
                 }
+                // Create Particle
+                GameObject particle = Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
+                float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
+                // Destroy when particle play done
+                Destroy(particle, duration);
             }
             else
             {
+                // Create Particle
+                GameObject particle = Instantiate(missParticle, noteObj.transform.position, Quaternion.identity);
+                float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
+                // Destroy when particle play done
+                Destroy(particle, duration);
+
                 Miss();
             }
             deleteNote(noteObj);
 
-            // Create Particle
-            GameObject particle = Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
-            float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
-            // Destroy when particle play done
-            Destroy(particle, duration);
 
             // Delete Note Object
             Destroy(noteObj.gameObject);

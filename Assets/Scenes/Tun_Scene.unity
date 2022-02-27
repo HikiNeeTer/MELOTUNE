@@ -1669,6 +1669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoteList: []
   noteParticle: {fileID: 3266976376477921689, guid: 9095d2f238985f84cbfec3d41e33b590, type: 3}
+  missParticle: {fileID: 3266976376477921689, guid: 17f93834bb896c0458bd0a44d8319d37, type: 3}
   EZ: {fileID: 1542224555}
   Up: 119
   Down: 115
@@ -2638,6 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a73412996480fb4dbea81d8b36f10c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillParticle: {fileID: 3266976376477921689, guid: f688ee6a8b0274a4b97322ea7bfc3880, type: 3}
 --- !u!1 &1616469425
 GameObject:
   m_ObjectHideFlags: 0
