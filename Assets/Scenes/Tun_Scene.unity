@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 832755834}
   - component: {fileID: 832755835}
   - component: {fileID: 832755833}
+  - component: {fileID: 832755837}
   - component: {fileID: 832755836}
   m_Layer: 0
   m_Name: NoteSpawner
@@ -1441,7 +1442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatTempo: 120
-  hasStart: 0
 --- !u!4 &832755834
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,7 +1468,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6246a7a769406284eb27466200a49bfd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1573,6 +1573,19 @@ MonoBehaviour:
     name: 
     BPM: 0
     allNote: []
+--- !u!114 &832755837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832755832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a751bbd0d7ea96b4e81f61bac2ef8ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 832755835}
 --- !u!1 &841645066
 GameObject:
   m_ObjectHideFlags: 0

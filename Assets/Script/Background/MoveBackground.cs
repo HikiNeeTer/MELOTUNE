@@ -25,7 +25,7 @@ public class MoveBackground : MonoBehaviour
    
     void Update()
     {
-        if (noteSheet.hasStart)
+        if (NoteMovement.hasStart)
         {
             newXposition = Mathf.Repeat(timeCount * -moveSpeed, offset);
             transform.position = startPosition + Vector2.right * newXposition;
