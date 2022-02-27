@@ -17,8 +17,10 @@ public class ButtonCheck : MonoBehaviour
     public KeyCode Left = KeyCode.A;
     public KeyCode Right = KeyCode.D;
 
+    //Tracking score and combo in game
     public static int Score = 0;
     public static int Combo = 0;
+    //Tracking grade during the game
     public static int PerfectS = 0;
     public static int GreatS = 0;
     public static int GoodS = 0;
@@ -27,9 +29,12 @@ public class ButtonCheck : MonoBehaviour
 
     public bool NoteWrong;
    
+    public AudioSource AS;
 
     public Text comboText;
     public Text scoreText;
+    //display what grade player press
+    public Text Gdisplay;
 
     void Start()
     {
@@ -69,33 +74,33 @@ public class ButtonCheck : MonoBehaviour
             if (Input.GetKeyDown(noteObj.keyToPress))
             {
                 DistantCheck dc = noteObj.GetComponent<DistantCheck>();
-                //Debug.Log(dc.distance);
+                AS.Play();
                 if (dc.distance <= 0.5)
                 {
-                    Debug.Log("Perfect");
+                    Gdisplay.text = "Perfect!!";
                     Skill += 0.1f;
                     Combo += 1;
                     PerfectS++;
                     Score += 1000;
-                    SkillBar.AmountSkill += 100f;
+                    SkillBar.AmountSkill += 5f;
                 }
                 else if (dc.distance <= 1)
                 {
-                    Debug.Log("Great");
+                    Gdisplay.text = "Great";
                     Skill += 0.075f;
                     Combo += 1;
                     GreatS++;
                     Score += 500;
-                    SkillBar.AmountSkill += 100f;
+                    SkillBar.AmountSkill += 3f;
                 }
                 else if (dc.distance <= 2)
                 {
-                    Debug.Log("Good");
+                    Gdisplay.text = "Good";
                     Skill += 0.05f;
                     Combo = 0;
                     GoodS++;
                     Score += 300;
-                    SkillBar.AmountSkill += 100f;
+                    SkillBar.AmountSkill += 1f;
                 }
             }
             else
@@ -121,13 +126,13 @@ public class ButtonCheck : MonoBehaviour
         MissS++;
         NoteWrong = true;
         if (EZ.isskill == false)
-        {           
-            Debug.Log("Miss(Wrong Press)");
+        {
+            Gdisplay.text = "Miss";
             Combo = 0;
         }
         if (EZ.isskill == true) 
         {
-            Debug.Log("Miss(Wrong Press) but perfect");
+            Gdisplay.text = "Perfect!!";
             Combo += 1;
             Score += 1000;
             EZ.skillamount--;
