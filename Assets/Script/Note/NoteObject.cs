@@ -27,7 +27,10 @@ public class NoteObject : MonoBehaviour
         // If trigger(exit) then note cannot Press
         if (collision.CompareTag("Button"))
         {
-            buttonReference.GetComponent<ButtonCheck>().deleteNote(this);            
+            if (collision.gameObject != null)
+            {
+                buttonReference.GetComponent<ButtonCheck>().deleteNote(this);
+            }
         }
     }
 }
