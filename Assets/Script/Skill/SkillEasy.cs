@@ -8,6 +8,7 @@ public class SkillEasy : MonoBehaviour
     public ButtonCheck BC;
     public MissBarrier NO;
     public Text Display;
+    public Text Gtext;
     public bool isskill;
     public int skillamount;
     // Start is called before the first frame update
@@ -31,7 +32,6 @@ public class SkillEasy : MonoBehaviour
             {
                 skillamount = 5;
                 isskill = true;
-                Debug.Log("Skill is activate");
                 SkillBar.AmountSkill = 0f;                                             
             }
         }
@@ -44,11 +44,10 @@ public class SkillEasy : MonoBehaviour
             }
             if (NO.NoteMiss && skillamount > 0)
             {
-                Debug.Log("Miss is perfect");
                 ButtonCheck.Combo += 1;
                 ButtonCheck.Score += 1000;               
                 skillamount--;
-                Debug.Log("SkillAmount = " + skillamount);
+                Gtext.text = "Perfect by skill";
                 NO.NoteMiss = false;
                 BC.NoteWrong = false;
             }

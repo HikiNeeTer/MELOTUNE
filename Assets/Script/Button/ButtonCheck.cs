@@ -86,7 +86,7 @@ public class ButtonCheck : MonoBehaviour
                     Combo += 1;
                     PerfectS++;
                     Score += 1000;
-                    SkillBar.AmountSkill += 100f;
+                    SkillBar.AmountSkill += 5f;
                 }
                 else if (dc.distance <= 1.0)
                 {

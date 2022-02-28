@@ -6,6 +6,7 @@ public class NoteMovement : MonoBehaviour
 {
     public float beatTempo;
     public static bool hasStart;
+    public Animator anim;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class NoteMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetTrigger("IsPlaying");
                 hasStart = true;
                 GetComponent<AudioSource>().Play();
             }
