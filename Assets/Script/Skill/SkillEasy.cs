@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillEasy : MonoBehaviour
 {
     public ButtonCheck BC;
     public MissBarrier NO;
+    public Text Display;
     public bool isskill;
     public int skillamount;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class SkillEasy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Display.text = "Skill left : " + skillamount;
         SkillActive();
     }
 

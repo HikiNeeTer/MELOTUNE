@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissBarrier : MonoBehaviour
 {
     public bool NoteMiss = false;
+    public Text G;
     public SkillEasy ES;
     public GameObject missParticle;
+    public AudioSource M;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +28,10 @@ public class MissBarrier : MonoBehaviour
         {
             NoteMiss = true;
             ButtonCheck.MissS++;
+            M.Play();
             if (ES.isskill == false) 
             {
+                G.text = "Miss";
                 Debug.Log("Miss (Pressing late)");
                 ButtonCheck.Combo = 0;
             }

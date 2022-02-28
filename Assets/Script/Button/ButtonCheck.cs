@@ -31,6 +31,7 @@ public class ButtonCheck : MonoBehaviour
     public bool NoteWrong;
    
     public AudioSource AS;
+    public AudioSource MAS;
 
     public Text comboText;
     public Text scoreText;
@@ -85,7 +86,7 @@ public class ButtonCheck : MonoBehaviour
                     Combo += 1;
                     PerfectS++;
                     Score += 1000;
-                    SkillBar.AmountSkill += 5f;
+                    SkillBar.AmountSkill += 100f;
                 }
                 else if (dc.distance <= 1.0)
                 {
@@ -138,6 +139,7 @@ public class ButtonCheck : MonoBehaviour
     }
     public void Miss() 
     {
+        MAS.Play();
         MissS++;
         NoteWrong = true;
         if (EZ.isskill == false)
@@ -147,7 +149,7 @@ public class ButtonCheck : MonoBehaviour
         }
         if (EZ.isskill == true) 
         {
-            Gdisplay.text = "Perfect!!";
+            Gdisplay.text = "Perfect by skill";
             Combo += 1;
             Score += 1000;
             EZ.skillamount--;
