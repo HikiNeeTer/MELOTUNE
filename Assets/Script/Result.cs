@@ -27,4 +27,9 @@ public class Result : MonoBehaviour
     {
         SceneManager.LoadScene("Tun_scene");
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
