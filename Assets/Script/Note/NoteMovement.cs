@@ -10,6 +10,9 @@ public class NoteMovement : MonoBehaviour
 
     void Start()
     {
+        // Set Song Volume via SoungController.cs
+        GetComponent<AudioSource>().volume = SoundController.songVolume;
+
         beatTempo /= 60.0f;
         hasStart = false;
     }

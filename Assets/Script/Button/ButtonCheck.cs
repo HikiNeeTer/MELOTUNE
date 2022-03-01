@@ -47,6 +47,9 @@ public class ButtonCheck : MonoBehaviour
         //DrawCircle(1.0f, 0.05f);
         //DrawCircle(2.0f, 0.05f);
 
+        // Set SFX Volume via SoungController.cs
+        GetComponent<AudioSource>().volume = SoundController.sfxVolume;
+
         //Setting Text Combo & Score to 0
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
