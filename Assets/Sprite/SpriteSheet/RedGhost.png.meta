@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63eba1cacf6eec04591d3031653a758a
+guid: 95c514920bbf195418190fa402c52f6a
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -109,9 +109,9 @@ TextureImporter:
       name: RedGhost_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 75
         y: 0
-        width: 1849
+        width: 1852
         height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,9 +130,9 @@ TextureImporter:
       name: RedGhost_1
       rect:
         serializedVersion: 2
-        x: 1893
+        x: 2023
         y: 0
-        width: 1854
+        width: 1849
         height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,7 +151,7 @@ TextureImporter:
       name: RedGhost_2
       rect:
         serializedVersion: 2
-        x: 3738
+        x: 4008
         y: 0
         width: 1814
         height: 2048
@@ -172,9 +172,9 @@ TextureImporter:
       name: RedGhost_3
       rect:
         serializedVersion: 2
-        x: 5573
+        x: 6053
         y: 0
-        width: 1824
+        width: 1819
         height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,7 +193,7 @@ TextureImporter:
       name: RedGhost_4
       rect:
         serializedVersion: 2
-        x: 7413
+        x: 8143
         y: 0
         width: 1749
         height: 2048

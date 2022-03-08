@@ -109,12 +109,12 @@ TextureImporter:
       name: BlueGhostSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 218
         y: 0
-        width: 1847
+        width: 1854
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,12 +130,12 @@ TextureImporter:
       name: BlueGhostSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 1968
+        x: 2183
         y: 0
         width: 1849
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,12 +151,12 @@ TextureImporter:
       name: BlueGhostSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 4073
+        x: 4188
         y: 0
-        width: 1809
+        width: 1814
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: BlueGhostSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 6158
+        x: 6148
         y: 0
-        width: 1819
+        width: 1824
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: BlueGhostSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 8243
+        x: 8178
         y: 0
-        width: 1752
+        width: 1749
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

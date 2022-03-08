@@ -109,12 +109,12 @@ TextureImporter:
       name: GreenGhostSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 88
         y: 0
-        width: 1847
+        width: 1849
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,12 +130,12 @@ TextureImporter:
       name: GreenGhostSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 1998
+        x: 2083
         y: 0
-        width: 1849
+        width: 1854
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,12 +151,12 @@ TextureImporter:
       name: GreenGhostSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 3998
+        x: 4063
         y: 0
         width: 1814
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: GreenGhostSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 6058
+        x: 6053
         y: 0
         width: 1819
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,13 +193,13 @@ TextureImporter:
       name: GreenGhostSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 8143
+        x: 8183
         y: 0
-        width: 1787
+        width: 1749
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 33, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

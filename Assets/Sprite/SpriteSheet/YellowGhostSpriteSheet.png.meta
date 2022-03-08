@@ -109,7 +109,7 @@ TextureImporter:
       name: YellowGhostSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 163
         y: 0
         width: 1854
         height: 2048
@@ -130,7 +130,7 @@ TextureImporter:
       name: YellowGhostSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 2063
+        x: 2223
         y: 0
         width: 1849
         height: 2048
@@ -151,7 +151,7 @@ TextureImporter:
       name: YellowGhostSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 4088
+        x: 4213
         y: 0
         width: 1814
         height: 2048
@@ -172,7 +172,7 @@ TextureImporter:
       name: YellowGhostSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 6098
+        x: 6283
         y: 0
         width: 1819
         height: 2048
@@ -193,7 +193,7 @@ TextureImporter:
       name: YellowGhostSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 8143
+        x: 8258
         y: 0
         width: 1749
         height: 2048
