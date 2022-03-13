@@ -16,6 +16,7 @@ public class ButtonCheck : MonoBehaviour
     public CameraShake camShake;
 
     public SkillEasy EZ;
+    public SecondSkill Ss;
     // For Setting KeyCode on Button
     public KeyCode Up = KeyCode.W;
     public KeyCode Down = KeyCode.S;
@@ -33,6 +34,7 @@ public class ButtonCheck : MonoBehaviour
     public static float Skill = 0.0f;
 
     public bool NoteWrong;
+    public bool NotePerfect;
    
     public AudioSource AS;
     public AudioSource MAS;
@@ -94,6 +96,7 @@ public class ButtonCheck : MonoBehaviour
                     PerfectS++;
                     Score += 1000;
                     SkillBar.AmountSkill += 5f;
+                    NotePerfect = true;
                 }
                 else if (dc.distance <= 1.0)
                 {
@@ -153,13 +156,13 @@ public class ButtonCheck : MonoBehaviour
         MAS.Play();
         MissS++;
         NoteWrong = true;
-        if (EZ.isskill == false)
+        if(EZ.isskill == false)
         {
             Gdisplay.text = "Miss";
             Combo = 0;
             camShake.ShakeCam(0.3f, 0.075f);
         }
-        if (EZ.isskill == true) 
+        if (EZ.isskill) 
         {
             Gdisplay.text = "Perfect by skill";
             Combo += 1;

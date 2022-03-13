@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 4b6161752b8eb794199e1d59ca5f8a81
   - enabled: 1
     path: Assets/Scenes/Tun_Scene.unity
-    guid: dfa66f29abf284440862fc1041497ce5
+    guid: de907c643ac3b694c96c105f571567cb
   - enabled: 1
     path: Assets/Scenes/Tun_Scene_result.unity
     guid: 09c944366a486e644b1d92895692a681

@@ -37,16 +37,16 @@ public class MissBarrier : MonoBehaviour
                 G.text = "Miss";
                 Debug.Log("Miss (Pressing late)");
                 ButtonCheck.Combo = 0;
+                camShake.ShakeCam(0.3f, 0.075f);
             }
-
-            camShake.ShakeCam(0.3f, 0.075f);
+           
 
             GameObject particle = Instantiate(missParticle, collision.transform.position, Quaternion.identity);
             float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
             // Destroy when particle play done
             Destroy(particle, duration);
 
-            Destroy(collision.gameObject);           
+            Destroy(collision.gameObject);
         }
     }
 }

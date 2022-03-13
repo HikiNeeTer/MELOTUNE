@@ -24,7 +24,7 @@ public class SkillEasy : MonoBehaviour
         SkillActive();
     }
 
-    public void SkillActive() 
+    void SkillActive() 
     {
         if (SkillBar.AmountSkill >= 100f)
         {

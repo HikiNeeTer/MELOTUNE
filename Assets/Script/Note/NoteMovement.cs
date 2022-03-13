@@ -12,7 +12,7 @@ public class NoteMovement : MonoBehaviour
     {
         // Set Song Volume via SoungController.cs
         GetComponent<AudioSource>().volume = SoundController.songVolume;
-
+        Time.timeScale = 0f;
         beatTempo /= 60.0f;
         hasStart = false;
     }
@@ -24,6 +24,7 @@ public class NoteMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Time.timeScale = 1f;
                 anim.SetTrigger("IsPlaying");
                 hasStart = true;
                 GetComponent<AudioSource>().Play();
