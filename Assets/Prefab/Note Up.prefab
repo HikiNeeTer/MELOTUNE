@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 119
+  particleColor: {r: 0.18396229, g: 0.9680488, b: 1, a: 1}
   buttonReference: {fileID: 0}
 --- !u!114 &4255323025041938719
 MonoBehaviour:

@@ -5,7 +5,8 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
     public KeyCode keyToPress;
-    
+    public Color particleColor;
+
     [HideInInspector] public GameObject buttonReference;
     private void OnTriggerEnter2D(Collider2D collision)
     {

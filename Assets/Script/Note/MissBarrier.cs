@@ -10,6 +10,9 @@ public class MissBarrier : MonoBehaviour
     public SkillEasy ES;
     public GameObject missParticle;
     public AudioSource M;
+
+    public CameraShake camShake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,9 @@ public class MissBarrier : MonoBehaviour
                 Debug.Log("Miss (Pressing late)");
                 ButtonCheck.Combo = 0;
             }
+
+            camShake.ShakeCam(0.3f, 0.075f);
+
             GameObject particle = Instantiate(missParticle, collision.transform.position, Quaternion.identity);
             float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
             // Destroy when particle play done

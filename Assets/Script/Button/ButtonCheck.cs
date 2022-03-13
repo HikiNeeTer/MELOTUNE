@@ -11,6 +11,10 @@ public class ButtonCheck : MonoBehaviour
     public GameObject noteParticle;
     public GameObject missParticle;
 
+    public GunShooting gun;
+
+    public CameraShake camShake;
+
     public SkillEasy EZ;
     // For Setting KeyCode on Button
     public KeyCode Up = KeyCode.W;
@@ -109,8 +113,12 @@ public class ButtonCheck : MonoBehaviour
                     Score += 300;
                     SkillBar.AmountSkill += 1f;
                 }
+
+                gun.Shoot(noteObj.transform.position);
+
                 // Create Particle
                 GameObject particle = Instantiate(noteParticle, noteObj.transform.position, Quaternion.identity);
+                particle.GetComponent<ParticleSystem>().startColor = noteObj.particleColor;
                 float duration = particle.GetComponent<ParticleSystem>().duration + particle.GetComponent<ParticleSystem>().startLifetime;
                 // Destroy when particle play done
                 Destroy(particle, duration);
@@ -149,6 +157,7 @@ public class ButtonCheck : MonoBehaviour
         {
             Gdisplay.text = "Miss";
             Combo = 0;
+            camShake.ShakeCam(0.3f, 0.075f);
         }
         if (EZ.isskill == true) 
         {

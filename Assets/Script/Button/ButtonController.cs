@@ -24,14 +24,6 @@ public class ButtonController : MonoBehaviour
 
     }
 
-    private void SetObject(GameObject obj, bool status)
-    {
-        // Cannot use SetActive -> will affect onTriggerExit on NoteObject.cs
-        obj.GetComponent<SpriteRenderer>().enabled = status;
-        obj.GetComponent<ButtonController>().enabled = status;
-        obj.GetComponent<ButtonCheck>().enabled = status;
-    }
-
     void ButtonControl()
     {
         // If Press W/A/S/D color changed
