@@ -11,10 +11,13 @@ public class ButtonCheck : MonoBehaviour
     public GameObject noteParticle;
     public GameObject missParticle;
 
+    public GameObject GradeSpawn;
+    public GameObject[] GradeDisplay;
+
     public GunShooting gun;
 
     public CameraShake camShake;
-
+    // Skill script reference
     public SkillEasy EZ;
     public SecondSkill Ss;
     // For Setting KeyCode on Button
@@ -97,6 +100,7 @@ public class ButtonCheck : MonoBehaviour
                     Score += 1000;
                     SkillBar.AmountSkill += 5f;
                     NotePerfect = true;
+                    GameObject prefab = Instantiate(GradeDisplay[0],GradeSpawn.transform.position, Quaternion.identity);
                 }
                 else if (dc.distance <= 1.0)
                 {
@@ -106,6 +110,7 @@ public class ButtonCheck : MonoBehaviour
                     GreatS++;
                     Score += 500;
                     SkillBar.AmountSkill += 3f;
+                    GameObject prefab = Instantiate(GradeDisplay[1], GradeSpawn.transform.position, Quaternion.identity);
                 }
                 else if (dc.distance <= 2.0)
                 {
@@ -115,6 +120,7 @@ public class ButtonCheck : MonoBehaviour
                     GoodS++;
                     Score += 300;
                     SkillBar.AmountSkill += 1f;
+                    GameObject prefab = Instantiate(GradeDisplay[2], GradeSpawn.transform.position, Quaternion.identity);
                 }
 
                 gun.Shoot(noteObj.transform.position);
@@ -161,6 +167,7 @@ public class ButtonCheck : MonoBehaviour
             Gdisplay.text = "Miss";
             Combo = 0;
             camShake.ShakeCam(0.3f, 0.075f);
+            GameObject prefab = Instantiate(GradeDisplay[3], GradeSpawn.transform.position, Quaternion.identity);
         }
         if (EZ.isskill) 
         {
@@ -168,6 +175,7 @@ public class ButtonCheck : MonoBehaviour
             Combo += 1;
             Score += 1000;
             EZ.skillamount--;
+            GameObject prefab = Instantiate(GradeDisplay[0], GradeSpawn.transform.position, Quaternion.identity);
         }
     }
 
