@@ -7,6 +7,7 @@ public class NoteMovement : MonoBehaviour
     public float beatTempo;
     public static bool hasStart;
     public Animator anim;
+    public GameObject SkillSelect;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class NoteMovement : MonoBehaviour
     void Update()
     {
         // If game start -> Note start move and song start play
-        if (!hasStart)
+        if (!hasStart && SkillSelect.activeSelf == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

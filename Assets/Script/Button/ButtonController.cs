@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject antButton;
-    public NoteMovement noteMovement;
+   public GameObject SkillSelect;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
         ButtonControl();
-
-        //Switching Lane mechanic when Game Start
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            transform.position = new Vector2(transform.position.x, (transform.position.y <= -2.4 ? -0.5f:-2.5f)); 
-        }
-
+      
+            if (Input.GetKeyDown(KeyCode.Space) && SkillSelect.activeSelf == false)
+            {
+                transform.position = new Vector2(transform.position.x, (transform.position.y <= -2.4 ? -0.5f : -2.5f));
+            }              
     }
 
     void ButtonControl()

@@ -7,16 +7,17 @@ public class PauseGame : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseUI;
     public AudioSource AS;
+    public GameObject SkillSelect;
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && SkillSelect.activeSelf == false)
         {
             if (GameIsPaused)
             {

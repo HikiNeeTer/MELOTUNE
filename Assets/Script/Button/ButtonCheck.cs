@@ -52,9 +52,9 @@ public class ButtonCheck : MonoBehaviour
         // Initialize List
         NoteList = new List<NoteObject>();
         // For Debugging (!!Create circle for distance detection!!)
-        //DrawCircle(0.3f, 0.05f);
-        //DrawCircle(1.0f, 0.05f);
-        //DrawCircle(2.0f, 0.05f);
+        /*DrawCircle(0.4f, 0.05f);
+        DrawCircle(1.0f, 0.05f);
+        /DrawCircle(2.0f, 0.05f);*/
 
         // Set SFX Volume via SoungController.cs
         GetComponent<AudioSource>().volume = SoundController.sfxVolume;
@@ -91,7 +91,7 @@ public class ButtonCheck : MonoBehaviour
             {
                 DistantCheck dc = noteObj.GetComponent<DistantCheck>();
                 AS.Play();
-                if (dc.distance <= 0.3)
+                if (dc.distance <= 0.4)
                 {
                     Gdisplay.text = "Perfect!!";
                     Skill += 0.1f;
