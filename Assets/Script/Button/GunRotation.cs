@@ -16,7 +16,7 @@ public class GunRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float offset = 90.0f;
+        float offset = 0.0f;
         Vector2 dir = target.position - transform.position;
         dir.Normalize();
 
