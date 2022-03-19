@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatTempo: 120
   anim: {fileID: 1542224557}
+  SkillSelect: {fileID: 0}
 --- !u!4 &832755834
 Transform:
   m_ObjectHideFlags: 0
@@ -1522,10 +1523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992ba8e08cc6cb44874a10fa9b6c9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteUp: {fileID: 4255323025041938712, guid: cea2a88dfe36c8c47b9a391fbd52b48e, type: 3}
-  noteDown: {fileID: 4255323025041938712, guid: 98c5391d9e3cb924daa35f905d04197f, type: 3}
-  noteLeft: {fileID: 4255323025041938712, guid: 71aa27139747b3a4da484d1bd06fd67a, type: 3}
-  noteRight: {fileID: 4255323025041938712, guid: 1558c924b7374fe44a1056c5c023cd57, type: 3}
+  noteUp: {fileID: 4255323025041938712, guid: 4d908854dc40f7147838095eb5742a39, type: 3}
+  noteDown: {fileID: 4255323025041938712, guid: f4a0c9722b56e9b4f9d0d7898be011f8, type: 3}
+  noteLeft: {fileID: 4255323025041938712, guid: da8a1ef57b4d1db44820e19071577d3d, type: 3}
+  noteRight: {fileID: 4255323025041938712, guid: 063fed9c9487bb04697b398c148fbea7, type: 3}
   fileName: {fileID: 4900000, guid: 5e0fda022dfa25b4a9c8885f4b30cddc, type: 3}
   loadNoteSheet:
     name: 
@@ -1703,8 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b325739202f6de04d8354d390b84f9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antButton: {fileID: 0}
-  noteMovement: {fileID: 0}
+  SkillSelect: {fileID: 0}
 --- !u!114 &841645072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,6 +1720,8 @@ MonoBehaviour:
   NoteList: []
   noteParticle: {fileID: 3266976376477921689, guid: 9095d2f238985f84cbfec3d41e33b590, type: 3}
   missParticle: {fileID: 3266976376477921689, guid: 17f93834bb896c0458bd0a44d8319d37, type: 3}
+  GradeSpawn: {fileID: 0}
+  GradeDisplay: []
   gun: {fileID: 1773725311}
   camShake: {fileID: 231225661}
   EZ: {fileID: 1542224555}
@@ -2684,6 +2686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 1435444511}
   AS: {fileID: 832755835}
+  SkillSelect: {fileID: 0}
 --- !u!95 &1542224557
 Animator:
   serializedVersion: 3
