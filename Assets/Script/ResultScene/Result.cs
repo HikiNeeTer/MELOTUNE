@@ -25,8 +25,9 @@ public class Result : MonoBehaviour
 
     public void Goback()
     {
-        SceneManager.LoadScene("Tun_scene");
+        SceneManager.LoadScene(ButtonCheck.SceneName);
     }
+
 
     public void GoToMainMenu()
     {

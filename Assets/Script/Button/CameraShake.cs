@@ -16,7 +16,7 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shakeDuration > 0.0f)
+        if (shakeDuration > 0.0f && Time.timeScale > 0.0f)
         {
             Vector3 shakeLocation = Random.insideUnitSphere * shakeAmount;
             transform.localPosition = new Vector3(shakeLocation.x, shakeLocation.y, -10.0f);

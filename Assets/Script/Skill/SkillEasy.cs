@@ -30,7 +30,7 @@ public class SkillEasy : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R)) 
             {
-                skillamount = 5;
+                skillamount = 1;
                 isskill = true;
                 SkillBar.AmountSkill = 0f;                                             
             }
@@ -47,7 +47,6 @@ public class SkillEasy : MonoBehaviour
                 ButtonCheck.Combo += 1;
                 ButtonCheck.Score += 1000;               
                 skillamount--;
-                Gtext.text = "Perfect by skill";
                 NO.NoteMiss = false;
                 BC.NoteWrong = false;
             }

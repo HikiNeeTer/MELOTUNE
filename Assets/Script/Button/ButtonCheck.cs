@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonCheck : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class ButtonCheck : MonoBehaviour
     public static int GoodS = 0;
     public static int MissS = 0;
     public static float Skill = 0.0f;
+    public static string SceneName;
 
     public bool NoteWrong;
     public bool NotePerfect;
@@ -45,7 +47,6 @@ public class ButtonCheck : MonoBehaviour
     public Text comboText;
     public Text scoreText;
     //display what grade player press
-    public Text Gdisplay;
 
     void Start()
     {
@@ -70,6 +71,8 @@ public class ButtonCheck : MonoBehaviour
         MissS = 0;
         PlayerPrefs.SetInt("highcombo", Combo);
         SkillBar.AmountSkill = 0f;
+        SceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(SceneName);
     }
 
     void Update()
@@ -93,7 +96,6 @@ public class ButtonCheck : MonoBehaviour
                 AS.Play();
                 if (dc.distance <= 0.4)
                 {
-                    Gdisplay.text = "Perfect!!";
                     Skill += 0.1f;
                     Combo += 1;
                     PerfectS++;
@@ -104,7 +106,6 @@ public class ButtonCheck : MonoBehaviour
                 }
                 else if (dc.distance <= 1.0)
                 {
-                    Gdisplay.text = "Great";
                     Skill += 0.075f;
                     Combo += 1;
                     GreatS++;
@@ -114,7 +115,6 @@ public class ButtonCheck : MonoBehaviour
                 }
                 else if (dc.distance <= 2.0)
                 {
-                    Gdisplay.text = "Good";
                     Skill += 0.05f;
                     Combo = 0;
                     GoodS++;
@@ -164,14 +164,12 @@ public class ButtonCheck : MonoBehaviour
         NoteWrong = true;
         if(EZ.isskill == false)
         {
-            Gdisplay.text = "Miss";
             Combo = 0;
             camShake.ShakeCam(0.3f, 0.075f);
             GameObject prefab = Instantiate(GradeDisplay[3], GradeSpawn.transform.position, Quaternion.identity);
         }
         if (EZ.isskill) 
         {
-            Gdisplay.text = "Perfect by skill";
             Combo += 1;
             Score += 1000;
             EZ.skillamount--;

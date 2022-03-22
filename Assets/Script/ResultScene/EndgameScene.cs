@@ -18,13 +18,14 @@ public class EndgameScene : MonoBehaviour
 
     void GoToResultScene() 
     {
+        Debug.Log("go to result scene");
         StartCoroutine(GameEnd());
     }
 
     private IEnumerator GameEnd() 
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Tun_scene_result");
+        SceneManager.LoadScene("Tun_Scene_result");
     }
 
 }

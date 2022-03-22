@@ -20,7 +20,11 @@ public class SecondSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Display.text = "Skill Duration:" + skillduration;
+        Display.text = "Skill Duration:" + skillduration.ToString("F2");
+        if(skillduration < 0) 
+        {
+            skillduration = 0;
+        }
         ActiveSkill();
     }
 

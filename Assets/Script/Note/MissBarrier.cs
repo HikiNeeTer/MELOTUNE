@@ -34,7 +34,6 @@ public class MissBarrier : MonoBehaviour
             M.Play();
             if (ES.isskill == false) 
             {
-                G.text = "Miss";
                 Debug.Log("Miss (Pressing late)");
                 ButtonCheck.Combo = 0;
                 camShake.ShakeCam(0.3f, 0.075f);
