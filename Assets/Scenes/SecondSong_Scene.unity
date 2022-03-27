@@ -777,6 +777,8 @@ MonoBehaviour:
   G: {fileID: 0}
   ES: {fileID: 1219784322}
   missParticle: {fileID: 3266976376477921689, guid: 17f93834bb896c0458bd0a44d8319d37, type: 3}
+  Miss: {fileID: 961543058875590543, guid: 408cc46b9e831d54389b446065c451af, type: 3}
+  GradeSpawn: {fileID: 1302003599}
   M: {fileID: 178994973}
   camShake: {fileID: 231225661}
 --- !u!82 &178994973

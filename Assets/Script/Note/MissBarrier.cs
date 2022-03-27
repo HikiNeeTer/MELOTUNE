@@ -9,6 +9,8 @@ public class MissBarrier : MonoBehaviour
     public Text G;
     public SkillEasy ES;
     public GameObject missParticle;
+    public GameObject Miss;
+    public GameObject GradeSpawn;
     public AudioSource M;
 
     public CameraShake camShake;
@@ -37,6 +39,7 @@ public class MissBarrier : MonoBehaviour
                 Debug.Log("Miss (Pressing late)");
                 ButtonCheck.Combo = 0;
                 camShake.ShakeCam(0.3f, 0.075f);
+                GameObject prefab = Instantiate(Miss, GradeSpawn.transform.position, Quaternion.identity);
             }
            
 
