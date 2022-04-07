@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647151036741894477, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.46613988
+      value: -0.46613994
       objectReference: {fileID: 0}
     - target: {fileID: 6647151036741894477, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalRotation.x
@@ -990,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7501482297211623916, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6958024
+      value: -0.69580245
       objectReference: {fileID: 0}
     - target: {fileID: 7501482297211623916, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1002,7 +1002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7501482297211623916, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.71823335
+      value: -0.7182333
       objectReference: {fileID: 0}
     - target: {fileID: 7501482297211623916, guid: 11dc0918abbe9a94fa4cd466adf57671, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2700,7 +2700,7 @@ PrefabInstance:
     - target: {fileID: 152594227794478023, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 52147642361287041, guid: 736a8a8f89393de47a393e06b75d697c, type: 3}
+      objectReference: {fileID: 8657824138853858078, guid: 736a8a8f89393de47a393e06b75d697c, type: 3}
     - target: {fileID: 977518739992680876, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2771,7 +2771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338210707229644910, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
       propertyPath: m_labelHash
-      value: -1.0511546e+29
+      value: 1.6059022e+36
       objectReference: {fileID: 0}
     - target: {fileID: 8986087076683343962, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
       propertyPath: m_labelHash
