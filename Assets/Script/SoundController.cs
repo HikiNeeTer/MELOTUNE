@@ -10,6 +10,7 @@ public class SoundController : MonoBehaviour
 
     public static float songVolume = 0.7f;
     public static float sfxVolume = 0.7f;
+    public GameObject mainMenuAudio;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class SoundController : MonoBehaviour
     public void ChangeSongVolume()
     {
         songVolume = songVolumeSlider.value;
+        mainMenuAudio.GetComponent<AudioSource>().volume = songVolume;
     }
 
     public void ChangeSFXVolume()
