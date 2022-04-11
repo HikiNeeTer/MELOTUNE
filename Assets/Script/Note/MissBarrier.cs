@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MissBarrier : MonoBehaviour
 {
     public bool NoteMiss = false;
-    public Text G;
     public SkillEasy ES;
     public GameObject missParticle;
     public GameObject Miss;

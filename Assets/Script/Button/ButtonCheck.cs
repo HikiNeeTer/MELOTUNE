@@ -40,6 +40,8 @@ public class ButtonCheck : MonoBehaviour
 
     public bool NoteWrong;
     public bool NotePerfect;
+    public bool NoteGreat;
+    public bool NoteGood;
    
     public AudioSource AS;
     public AudioSource MAS;

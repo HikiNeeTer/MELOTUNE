@@ -463,6 +463,8 @@ MonoBehaviour:
   G: {fileID: 1997734261}
   ES: {fileID: 1542224555}
   missParticle: {fileID: 3266976376477921689, guid: 17f93834bb896c0458bd0a44d8319d37, type: 3}
+  Miss: {fileID: 0}
+  GradeSpawn: {fileID: 0}
   M: {fileID: 178994973}
   camShake: {fileID: 231225661}
 --- !u!82 &178994973
@@ -1523,10 +1525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8992ba8e08cc6cb44874a10fa9b6c9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteUp: {fileID: 4255323025041938712, guid: 4d908854dc40f7147838095eb5742a39, type: 3}
-  noteDown: {fileID: 4255323025041938712, guid: f4a0c9722b56e9b4f9d0d7898be011f8, type: 3}
-  noteLeft: {fileID: 4255323025041938712, guid: da8a1ef57b4d1db44820e19071577d3d, type: 3}
-  noteRight: {fileID: 4255323025041938712, guid: 063fed9c9487bb04697b398c148fbea7, type: 3}
+  noteUp: {fileID: 4255323025041938712, guid: 23607e6c423a5224a8081046b29c40f2, type: 3}
+  noteDown: {fileID: 4255323025041938712, guid: 703497930ce51b849ad8820a1be59437, type: 3}
+  noteLeft: {fileID: 4255323025041938712, guid: 384148277b72b384bbfa17c78c9e7a5d, type: 3}
+  noteRight: {fileID: 4255323025041938712, guid: 9f0ed799e446035439c082ed352ec608, type: 3}
   fileName: {fileID: 4900000, guid: 5e0fda022dfa25b4a9c8885f4b30cddc, type: 3}
   loadNoteSheet:
     name: 
@@ -1736,7 +1738,6 @@ MonoBehaviour:
   MAS: {fileID: 178994973}
   comboText: {fileID: 123778422}
   scoreText: {fileID: 855073368}
-  Gdisplay: {fileID: 1997734261}
 --- !u!82 &841645073
 AudioSource:
   m_ObjectHideFlags: 0
