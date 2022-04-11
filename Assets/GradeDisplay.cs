@@ -7,8 +7,10 @@ public class GradeDisplay : MonoBehaviour
 {
     [SerializeField] private Text grade1Text;
     [SerializeField] private Text accuracy1Text;
+    [SerializeField] private Text highscore1Text;
     [SerializeField] private Text grade2Text;
     [SerializeField] private Text accuracy2Text;
+    [SerializeField] private Text highscore2Text;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,11 @@ public class GradeDisplay : MonoBehaviour
     void Update()
     {
         grade1Text.text = "Grade: " + PlayerPrefs.GetString("Grade1");
-        accuracy1Text.text = "Accuracy: " + PlayerPrefs.GetFloat("Accuracy1").ToString("F2") + "%"; ;
+        accuracy1Text.text = "Accuracy: " + PlayerPrefs.GetFloat("Accuracy1").ToString("F2") + "%";
+        highscore1Text.text = "Highscore: " + PlayerPrefs.GetInt("Highscore1");
 
         grade2Text.text ="Grade: " + PlayerPrefs.GetString("Grade2");
-        accuracy2Text.text = "Accuracy: " +  PlayerPrefs.GetFloat("Accuracy2").ToString("F2") + "%"; ;
+        accuracy2Text.text = "Accuracy: " +  PlayerPrefs.GetFloat("Accuracy2").ToString("F2") + "%";
+        highscore2Text.text = "Highscore: " + PlayerPrefs.GetInt("Highscore2");
     }
 }

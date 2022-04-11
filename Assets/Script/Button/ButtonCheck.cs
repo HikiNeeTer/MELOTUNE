@@ -154,6 +154,21 @@ public class ButtonCheck : MonoBehaviour
         {
             PlayerPrefs.SetInt("highcombo", Combo);
         }
+        //Record highscore
+        if (SceneName == "Tun_Scene")
+        {
+            if (Score > PlayerPrefs.GetInt("Highscore1"))
+            {
+                PlayerPrefs.SetInt("Highscore1", Score);
+            }           
+        }
+        else if (SceneName == "SecondSong_Scene")
+        {
+            if (Score > PlayerPrefs.GetInt("Highscore2"))
+            {
+                PlayerPrefs.SetInt("Highscore2", Score);
+            }
+        }
         Skill = (Skill >= 1.0f ? 1.0f : Skill);
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();
