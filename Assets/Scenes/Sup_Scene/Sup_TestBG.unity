@@ -870,7 +870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteMiss: 0
-  G: {fileID: 1997734261}
   ES: {fileID: 426920728}
   missParticle: {fileID: 3266976376477921689, guid: 17f93834bb896c0458bd0a44d8319d37, type: 3}
   Miss: {fileID: 0}
@@ -5236,6 +5235,8 @@ MonoBehaviour:
   Right: 100
   NoteWrong: 0
   NotePerfect: 0
+  NoteGreat: 0
+  NoteGood: 0
   AS: {fileID: 841645073}
   MAS: {fileID: 178994973}
   comboText: {fileID: 123778422}
@@ -6107,7 +6108,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6127,7 +6128,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -14
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -6161,7 +6162,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000438065}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -6236,7 +6237,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6405,8 +6406,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.09
-      minScalar: 0.01
+      scalar: 0.05
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6788,7 +6789,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 30, y: 1, z: 2}
+    m_Scale: {x: 30, y: 1, z: 4}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6986,7 +6987,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10912,7 +10913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000438065}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.16, y: 3.95, z: -30.008621}
+  m_LocalPosition: {x: -2.16, y: 3.95, z: -9}
   m_LocalScale: {x: 1.1241, y: 1.1241, z: 1.1241}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12852,6 +12853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 426920726}
+  SkillB: {fileID: 0}
+  SkillT: {fileID: 0}
   Describtion: {fileID: 0}
 --- !u!1 &1470571632
 GameObject:
