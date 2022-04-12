@@ -2618,7 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9404ba3dd5cf90418cd5d0e4c49f508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8987692692885324569, guid: 3cb5382c898e5844087a34db879cdfe3, type: 3}
+  bullet: {fileID: 4787478950710254117, guid: 66a0879f211febe47a35562883318138, type: 3}
   shootingPosition: {fileID: 1237952452}
 --- !u!114 &816026621
 MonoBehaviour:
@@ -2673,7 +2673,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3db1a6c76436f2f47831f2344c1cef5a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6335e14d3494ebd4ea8d314dde285113, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6409,7 +6409,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1470355028}
           m_TargetAssemblyTypeName: SkillSelected, Assembly-CSharp
-          m_MethodName: SecondHighlight
+          m_MethodName: ThirdHighlight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6465,7 +6465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1470355028}
         m_TargetAssemblyTypeName: SkillSelected, Assembly-CSharp
-        m_MethodName: SecondActive
+        m_MethodName: ThirdActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

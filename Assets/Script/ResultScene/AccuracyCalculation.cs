@@ -19,13 +19,24 @@ public class AccuracyCalculation : MonoBehaviour
     void Update()
     {
         accuracy = ((ButtonCheck.PerfectS + (ButtonCheck.GreatS / 2.0f) - ButtonCheck.GoodS - ButtonCheck.MissS) / (float)allNote) * 100.0f;       
+        if(accuracy < 0.0f) 
+        {
+            accuracy = 0.0f;
+        }
         if (ButtonCheck.SceneName == "Tun_Scene")
         {
-            PlayerPrefs.SetFloat("Accuracy1", accuracy);
+            if (accuracy > PlayerPrefs.GetFloat("Accuracy1"))
+            {
+                PlayerPrefs.SetFloat("Accuracy1", accuracy);
+            }
+
         }
         else if (ButtonCheck.SceneName == "SecondSong_Scene")
         {
-            PlayerPrefs.SetFloat("Accuracy2", accuracy);
+            if (accuracy > PlayerPrefs.GetFloat("Accuracy2"))
+            {
+                PlayerPrefs.SetFloat("Accuracy2", accuracy);
+            }
         }
         AccuracyText.text = "Accuracy: " + accuracy.ToString("F2") + "%";
         Grade();
@@ -36,11 +47,11 @@ public class AccuracyCalculation : MonoBehaviour
         if (accuracy > 95.0f) 
         {
             GradeText.text = "Grade : S";
-            if(ButtonCheck.SceneName == "Tun_Scene") 
+            if(ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1")) 
             {
                 PlayerPrefs.SetString("Grade1", "S");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene") 
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2")) 
             {
                 PlayerPrefs.SetString("Grade2", "S");
             }
@@ -48,11 +59,11 @@ public class AccuracyCalculation : MonoBehaviour
         else if (accuracy > 90.0f)
         {
             GradeText.text = "Grade : A";
-            if (ButtonCheck.SceneName == "Tun_Scene")
+            if (ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1"))
             {
                 PlayerPrefs.SetString("Grade1", "A");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene")
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "A");
             }
@@ -60,11 +71,11 @@ public class AccuracyCalculation : MonoBehaviour
         else if (accuracy > 80.0f)
         {
             GradeText.text = "Grade : B";
-            if (ButtonCheck.SceneName == "Tun_Scene")
+            if (ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1"))
             {
                 PlayerPrefs.SetString("Grade1", "B");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene")
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "B");
             }
@@ -72,11 +83,11 @@ public class AccuracyCalculation : MonoBehaviour
         else if (accuracy > 70.0f)
         {
             GradeText.text = "Grade : C";
-            if (ButtonCheck.SceneName == "Tun_Scene")
+            if (ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1"))
             {
                 PlayerPrefs.SetString("Grade1", "C");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene")
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "C");
             }
@@ -84,11 +95,11 @@ public class AccuracyCalculation : MonoBehaviour
         else if (accuracy > 60.0f)
         {
             GradeText.text = "Grade : D";
-            if (ButtonCheck.SceneName == "Tun_Scene")
+            if (ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1"))
             {
                 PlayerPrefs.SetString("Grade1", "D");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene")
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "D");
             }
@@ -96,11 +107,11 @@ public class AccuracyCalculation : MonoBehaviour
         else if (accuracy < 60.0f)
         {
             GradeText.text = "Grade : F";
-            if (ButtonCheck.SceneName == "Tun_Scene")
+            if (ButtonCheck.SceneName == "Tun_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy1"))
             {
                 PlayerPrefs.SetString("Grade1", "F");
             }
-            else if (ButtonCheck.SceneName == "SecondSong_Scene")
+            else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "F");
             }
