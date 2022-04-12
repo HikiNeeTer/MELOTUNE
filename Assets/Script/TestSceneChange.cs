@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TestSceneChange : MonoBehaviour
 {
-
+    public void DeleteData() 
+    {
+        PlayerPrefs.DeleteAll();
+    }
     public void LoadScene(string sceneName) 
     {
         SceneManager.LoadScene(sceneName);
