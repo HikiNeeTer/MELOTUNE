@@ -38,6 +38,13 @@ public class AccuracyCalculation : MonoBehaviour
                 PlayerPrefs.SetFloat("Accuracy2", accuracy);
             }
         }
+        else if (ButtonCheck.SceneName == "ThirdSong_Scene")
+        {
+            if (accuracy > PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetFloat("Accuracy3", accuracy);
+            }
+        }
         AccuracyText.text = "Accuracy: " + accuracy.ToString("F2") + "%";
         Grade();
     }
@@ -55,6 +62,10 @@ public class AccuracyCalculation : MonoBehaviour
             {
                 PlayerPrefs.SetString("Grade2", "S");
             }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "S");
+            }
         }
         else if (accuracy > 90.0f)
         {
@@ -66,6 +77,10 @@ public class AccuracyCalculation : MonoBehaviour
             else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "A");
+            }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "A");
             }
         }
         else if (accuracy > 80.0f)
@@ -79,6 +94,10 @@ public class AccuracyCalculation : MonoBehaviour
             {
                 PlayerPrefs.SetString("Grade2", "B");
             }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "B");
+            }
         }
         else if (accuracy > 70.0f)
         {
@@ -90,6 +109,10 @@ public class AccuracyCalculation : MonoBehaviour
             else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "C");
+            }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "C");
             }
         }
         else if (accuracy > 60.0f)
@@ -103,6 +126,10 @@ public class AccuracyCalculation : MonoBehaviour
             {
                 PlayerPrefs.SetString("Grade2", "D");
             }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "D");
+            }
         }
         else if (accuracy < 60.0f)
         {
@@ -114,6 +141,10 @@ public class AccuracyCalculation : MonoBehaviour
             else if (ButtonCheck.SceneName == "SecondSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy2"))
             {
                 PlayerPrefs.SetString("Grade2", "F");
+            }
+            else if (ButtonCheck.SceneName == "ThirdSong_Scene" && accuracy >= PlayerPrefs.GetFloat("Accuracy3"))
+            {
+                PlayerPrefs.SetString("Grade3", "F");
             }
         }
     }

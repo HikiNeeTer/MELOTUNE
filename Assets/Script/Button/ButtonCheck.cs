@@ -169,6 +169,13 @@ public class ButtonCheck : MonoBehaviour
                 PlayerPrefs.SetInt("Highscore2", Score);
             }
         }
+        else if (SceneName == "ThirdSong_Scene")
+        {
+            if (Score > PlayerPrefs.GetInt("Highscore3"))
+            {
+                PlayerPrefs.SetInt("Highscore3", Score);
+            }
+        }
         Skill = (Skill >= 1.0f ? 1.0f : Skill);
         comboText.text = "Combo : " + Combo.ToString();
         scoreText.text = "Score : " + Score.ToString();

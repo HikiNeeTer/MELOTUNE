@@ -14,8 +14,6 @@ public class ThirdSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
        if(ButtonCheck.Combo > 50) 
        {
             if (BC.NotePerfect)

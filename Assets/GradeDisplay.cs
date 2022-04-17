@@ -11,6 +11,9 @@ public class GradeDisplay : MonoBehaviour
     [SerializeField] private Text grade2Text;
     [SerializeField] private Text accuracy2Text;
     [SerializeField] private Text highscore2Text;
+    [SerializeField] private Text grade3Text;
+    [SerializeField] private Text accuracy3Text;
+    [SerializeField] private Text highscore3Text;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +31,9 @@ public class GradeDisplay : MonoBehaviour
         grade2Text.text ="Grade: " + PlayerPrefs.GetString("Grade2");
         accuracy2Text.text = "Accuracy: " +  PlayerPrefs.GetFloat("Accuracy2").ToString("F2") + "%";
         highscore2Text.text = "Highscore: " + PlayerPrefs.GetInt("Highscore2");
+
+        grade3Text.text = "Grade: " + PlayerPrefs.GetString("Grade3");
+        accuracy3Text.text = "Accuracy: " + PlayerPrefs.GetFloat("Accuracy3").ToString("F2") + "%";
+        highscore3Text.text = "Highscore: " + PlayerPrefs.GetInt("Highscore3");
     }
 }

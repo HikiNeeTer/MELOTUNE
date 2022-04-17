@@ -275,7 +275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 123456789
+  m_Text: Please choose your skill
 --- !u!222 &62271281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426920726}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dd5d170f332e9942a98d6f2ee827f7a, type: 3}
   m_Name: 
@@ -3740,7 +3740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 426920726}
   SkillB: {fileID: 1591452718}
-  SkillT: {fileID: 855073368}
+  SkillT: {fileID: 711940006}
   Describtion: {fileID: 62271280}
 --- !u!1 &1542224552
 GameObject:
