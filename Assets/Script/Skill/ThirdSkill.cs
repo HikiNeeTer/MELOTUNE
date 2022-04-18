@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThirdSkill : MonoBehaviour
 {
     public ButtonCheck BC;
+    public Text ComboText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class ThirdSkill : MonoBehaviour
     {
        if(ButtonCheck.Combo > 50) 
        {
+            ComboText.color = Color.green;
             if (BC.NotePerfect)
             {
                 ButtonCheck.Score += 500;
@@ -32,6 +35,10 @@ public class ThirdSkill : MonoBehaviour
                 BC.NoteGood = false;
             }
        }
+       else
+       {
+            ComboText.color = Color.white;
+        }
     }
 
    

@@ -35,7 +35,10 @@ public class NoteMovement : MonoBehaviour
         }
         else
         {
-            transform.position -= new Vector3(beatTempo * Time.deltaTime, 0.0f, 0.0f);
+            if (Time.timeScale > 0.0f)
+            {
+                transform.position -= new Vector3(beatTempo * Time.deltaTime, 0.0f, 0.0f);
+            }
         }
     }
 }
