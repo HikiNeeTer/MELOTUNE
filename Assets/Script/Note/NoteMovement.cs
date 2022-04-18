@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoteMovement : MonoBehaviour
 {
     public float beatTempo;
     public static bool hasStart;
-    public Animator anim;
     public GameObject SkillSelect;
+    public Text StartText;
 
     void Start()
     {
@@ -26,9 +27,10 @@ public class NoteMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Time.timeScale = 1f;
-                anim.SetTrigger("IsPlaying");
                 hasStart = true;
                 GetComponent<AudioSource>().Play();
+                StartText.text = "";
+
             }
         }
         else
