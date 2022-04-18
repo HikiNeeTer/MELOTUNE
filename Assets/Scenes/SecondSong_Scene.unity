@@ -4809,6 +4809,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.028097946
       objectReference: {fileID: 0}
+    - target: {fileID: 1960621316557848243, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1960621316670547359, guid: d80c35cd003153e47b7e7d9236707937, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.007908627
