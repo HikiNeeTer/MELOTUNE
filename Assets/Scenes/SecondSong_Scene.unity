@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb63d5c0e337a514e96156bedea85ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTempo: 120
+  beatTempo: 123.5
   SkillSelect: {fileID: 1177918753}
   StartText: {fileID: 702979133}
 --- !u!4 &832755834
