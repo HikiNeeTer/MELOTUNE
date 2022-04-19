@@ -1731,7 +1731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &711940005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3576,10 +3576,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BC: {fileID: 841645072}
   NO: {fileID: 178994972}
+  skillBar: {fileID: 1591452718}
   Display: {fileID: 711940006}
   Gtext: {fileID: 0}
   isskill: 0
   skillamount: 0
+  skillColor: {r: 1, g: 0, b: 0.88235295, a: 1}
 --- !u!114 &1469675491
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class ButtonCheck : MonoBehaviour
     public static int MissS = 0;
     public static float Skill = 0.0f;
     public static string SceneName;
+    public static bool isSkillUsed;
 
     public bool NoteWrong;
     public bool NotePerfect;
@@ -98,30 +99,39 @@ public class ButtonCheck : MonoBehaviour
                 AS.Play();
                 if (dc.distance <= 0.4)
                 {
-                    Skill += 0.1f;
+                    if (!isSkillUsed)
+                    {
+                        Skill += 0.1f;
+                        SkillBar.AmountSkill += 5f;
+                    }
                     Combo += 1;
                     PerfectS++;
                     Score += 1000;
-                    SkillBar.AmountSkill += 5f;
                     NotePerfect = true;
                     GameObject prefab = Instantiate(GradeDisplay[0],GradeSpawn.transform.position, Quaternion.identity);
                 }
                 else if (dc.distance <= 1.0)
                 {
-                    Skill += 0.075f;
+                    if (!isSkillUsed)
+                    {
+                        Skill += 0.075f;
+                        SkillBar.AmountSkill += 3f;
+                    }
                     Combo += 1;
                     GreatS++;
                     Score += 500;
-                    SkillBar.AmountSkill += 3f;
                     GameObject prefab = Instantiate(GradeDisplay[1], GradeSpawn.transform.position, Quaternion.identity);
                 }
                 else if (dc.distance <= 2.0)
                 {
-                    Skill += 0.05f;
+                    if (!isSkillUsed)
+                    {
+                        Skill += 0.05f;
+                        SkillBar.AmountSkill += 1f;
+                    }
                     Combo = 0;
                     GoodS++;
                     Score += 300;
-                    SkillBar.AmountSkill += 1f;
                     GameObject prefab = Instantiate(GradeDisplay[2], GradeSpawn.transform.position, Quaternion.identity);
                 }
 

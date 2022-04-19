@@ -10,11 +10,12 @@ public class SecondSkill : MonoBehaviour
     public Text Display;
     public static bool isskill;
     private float skillduration;
+    private float currentSkillDuration;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        skillduration = 5.0f;
     }
 
     // Update is called once per frame
@@ -34,17 +35,20 @@ public class SecondSkill : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                skillduration = 5.0f;
+                currentSkillDuration = skillduration;
+                ButtonCheck.isSkillUsed = true;
                 isskill = true;
                 SkillBar.AmountSkill = 0f;
             }           
         }
         if (isskill == true)
         {
-            skillduration -= Time.deltaTime;
-            SkillBar.AmountSkill = 0f;
-            if (skillduration <= 0)
+            currentSkillDuration -= Time.deltaTime;
+            SkillBar.AmountSkill = (currentSkillDuration / skillduration) * 100.0f;
+            if (currentSkillDuration < 0)
             {
+                SkillBar.AmountSkill = 0.0f;
+                ButtonCheck.isSkillUsed = false;
                 isskill = false;
             }
 

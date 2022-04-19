@@ -7,10 +7,12 @@ public class SkillEasy : MonoBehaviour
 {
     public ButtonCheck BC;
     public MissBarrier NO;
+    public GameObject skillBar;
     public Text Display;
     public Text Gtext;
     public bool isskill;
     public int skillamount;
+    public Color skillColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +33,20 @@ public class SkillEasy : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R)) 
             {
                 skillamount = 1;
+                ButtonCheck.isSkillUsed = true;
                 isskill = true;
-                SkillBar.AmountSkill = 0f;                                             
+                SkillBar.AmountSkill = 0f;
+                skillBar.GetComponent<Image>().color = skillColor;
             }
         }
         if(isskill == true) 
         {
-            SkillBar.AmountSkill = 0f;
+            SkillBar.AmountSkill = 99.9f;
             if (skillamount == 0)
             {
+                skillBar.GetComponent<Image>().color = Color.white;
+                SkillBar.AmountSkill = 0.0f;
+                ButtonCheck.isSkillUsed = false;
                 isskill = false;
             }
             if (NO.NoteMiss && skillamount > 0)
